@@ -15,7 +15,9 @@
     });
 
     $app->post("/display", function() use ($app) {
-        return $app['twig']->render("display.html.twig", array("date" => $_POST['date']));
+        $date = new Dayfinder($_POST['date']);
+        $date->setDayOfWeek();
+        return $app['twig']->render("display.html.twig", array("date" => $date));
     });
 
     return $app;
