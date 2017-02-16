@@ -32,11 +32,11 @@
       return $this->day_of_week;
     }
 
-
-    function findDay()
+    function setDayOfWeek()
     {
-        //
-        $monthValue = ["Jan"];
+        $week_day_number = ($this->day + floor((13*($this->shift_month + 1))/5 ) + $this->shift_year + floor($this->shift_year/4) + floor($this->century/4) - (2 * $this->century))%7;
+        $week_day_names = array("Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday");
+        $this->day_of_week = $week_day_names[$week_day_number];
     }
 
     function __construct($input_date)

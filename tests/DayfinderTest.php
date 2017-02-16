@@ -3,21 +3,22 @@
 
     Class DayfinderTest extends PHPUnit_Framework_TestCase
     {
-        function test_FindDay()
+        function test_setDayOfWeek()
         {
             $input = "2017-02-16";
-            $newDay = New Dayfinder($input);
+            $new_day = New Dayfinder($input);
+            $new_day->setDayOfWeek();
 
-            $result = $newDay->FindDay($input);
+            $result = $new_day->getDayOfWeek();
             $this->assertEquals("Thursday", $result);
         }
 
         function test_constructor()
         {
             $input = "2017-02-16";
-            $newDay = New Dayfinder($input);
+            $new_day = New Dayfinder($input);
 
-            $result = array($newDay->getDay(), $newDay->getShiftMonth(),$newDay->getCentury(),$newDay->getShiftYear());
+            $result = array($new_day->getDay(), $new_day->getShiftMonth(),$new_day->getCentury(),$new_day->getShiftYear());
 
             $this->assertEquals(array(16,14,20,16),$result);
         }
