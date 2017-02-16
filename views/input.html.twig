@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Day Finder</title>
+    </head>
+    <body>
+        <div class="container">
+            <form action="/display" method="post">
+                <label for="date">Enter a Date</label>
+                <input type="date" name="date">
+                <button type="submit" name="submit">Find the Day</button>
+            </form>
+            <div>
+                {% block display %}
+                    <h3>Your results will display here!</h3>
+                {% endblock %}
+
+            </div>
+
+        </div>
+    </body>
+</html>
